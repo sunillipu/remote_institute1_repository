@@ -1,0 +1,45 @@
+{% extends 'base_home.html' %}
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+{% block content %}
+    <center>
+    <h9><u>Course Update</u></h9>
+    </center>
+{% if Course_Update_Data %}
+    <center>
+    <table border="2px">
+    <thead>
+    <tr>
+    <th>Course Name</th>
+    <th>Start Date</th>
+    <th>Course Fee</th>
+    <th>Faculty Name</th>
+    </tr>
+    </thead>
+        {% for i in Course_Update_Data %}
+         <tbody>
+         <tr>
+             <td><b> {{ i.course_name }}</b></td>
+           <td><b> {{ i.start_date }}</b></td>
+           <td> {{ i.course_fee }}</td>
+           <td><b> {{ i.faculty_name }}</b></td>
+         </tr>
+         </tbody>
+    {% endfor %}
+    </table>
+    </center>
+{% else %}
+<h9 align="left">Coming Soon.....</h9>
+{% endif %}
+{% endblock %}
+</body>
+</html>

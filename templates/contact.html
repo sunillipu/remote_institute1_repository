@@ -1,0 +1,36 @@
+{% extends 'base_home.html' %}
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="offset-md-4 cal-md-7">
+           <h2> Enter Your Details.....</h2>
+            <form method="POST" >
+                {% csrf_token %}
+                {{ abc.as_p }}<br>
+                <center>
+                <input type="submit" value="sbmit" class="btn btn-success">
+                <input type="reset"  value="clear" class="btn btn-danger">
+                </center>
+            </form>
+
+        </div>
+    </div>
+
+    <center>
+        <h3><u>Please Contact Us</u></h3>
+    </center>
+    </div>
+{% endblock %}
+</body>
+
+</html>

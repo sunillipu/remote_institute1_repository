@@ -1,0 +1,43 @@
+{% extends 'base_home.html' %}
+<html>
+<head>
+    <title>Feedback</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class=" cal-md-1">
+            <h5>Your Feedbacks Are...</h5>
+            {% if jkl %}
+            {% for i in jkl %}
+                {% if i.rating > 5%}
+                    <b>Name:{{ i.name.capitalize }}</b></br>
+                Rating:{{ i.rating}}<br>
+                Date:{{ i.date }}<br>
+                Feedback:{{ i.feedback }}<br>
+                {% endif%}
+            {% endfor %}
+            {% else %}
+            <h5>No feedbacks.....</h5>
+            {% endif %}
+        </div>
+    </div>
+        <div class="row2">
+        <div class="offset-md-2">
+        <h5 class="text-center" > Enter Your Feedback.....</h5>
+        <form method="POST" asdf>
+             {% csrf_token %}
+                    {{ asdf }}<br>
+                    <center>
+                    <input type="submit" value="sbmit" class="btn btn-success">
+                    <input type="reset"  value="clear" class="btn btn-danger">
+                    </center>
+        </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>
